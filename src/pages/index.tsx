@@ -17,7 +17,8 @@ const LinkButton = styled(Link)`
 export default function Home() {
   return (
     <Grid>
-      <LinkButton href="/day1">Day1</LinkButton>
+      <LinkButton href="/challenge/day1">Day1</LinkButton>
+      <LinkButton href="/challenge/day2">Day2</LinkButton>
     </Grid>
   )
 }
