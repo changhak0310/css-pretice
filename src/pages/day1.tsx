@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 
@@ -35,7 +37,7 @@ const Number = styled.div`
     height: 100px;
     width: 200px;
 `
-const OneOne = styled.div`
+const oneOne = css`
    position: absolute;
    z-index: 1;
    top: 0;
@@ -48,14 +50,71 @@ const OneOne = styled.div`
    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
 `
 
+const oneTwo = css`
+    position: absolute;
+    z-index: 10;
+    top: 0px;
+    left: 0px;
+    height: 100px;
+    width: 24px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+`
+
+const zero = css`
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    left: 17px;
+    box-sizing: border-box;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 24px solid #fff;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+`
+
+const zeroTwo = css`
+    z-index: 6;
+    left: 100px;
+`
+
+const Big = styled.span`
+    position: relative;
+    z-index: 20;
+    display: block;
+    font-size: 82px;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 6px;
+`
+
+const Small = styled.span`
+    position: relative;
+    z-index: 20;
+    display: block;
+    font-size: 23px;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .04rem;
+`
+
 const Day1 = () => {
     
     return(
         <Frame>
             <Center>
                 <Number>
-                    <OneOne/>
+                    <div css={oneOne}/>
+                    <div css={oneTwo}/>
+                    <div css={zero}/>
+                    <div css={[zero, zeroTwo]}/>
                 </Number>
+                <Big>days</Big>
+                <Small>css challenge</Small>
             </Center>
         </Frame>
     )
