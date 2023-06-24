@@ -306,14 +306,14 @@ const Day3 = () => {
                     </BlueData>
                 </Statistic>
                 <Days>
-                        <Day>Mon</Day>
-                        <Day>Tue</Day>
-                        <Day>Wed</Day>
-                        <Day>Thu</Day>
-                        <Day>Fri</Day>
-                        <Day>Sat</Day>
-                        <Day>Sun</Day>
-                    </Days>
+                    <Day>Mon</Day>
+                    <Day>Tue</Day>
+                    <Day>Wed</Day>
+                    <Day>Thu</Day>
+                    <Day>Fri</Day>
+                    <Day>Sat</Day>
+                    <Day>Sun</Day>
+                </Days>
             </Card>
         </Frame>
     )
