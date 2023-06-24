@@ -256,7 +256,7 @@ const Day = styled.div`
 `
 
 
-const Day3 = () => {
+const Day5 = () => {
     
     return(
         <Frame>
@@ -318,4 +318,4 @@ const Day3 = () => {
     )
 }
 
-export default Day3
+export default Day5
