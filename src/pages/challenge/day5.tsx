@@ -267,7 +267,6 @@ const Day3 = () => {
                     <span css={[typeFont, smallFont]}>Revenue</span>
                     <span css={[valueFont, bigFont]}>$ 3621.79</span>
                 </Header>
-                <div className="clearfix"></div>
                 <ParameterContain>
                     <span css={[pararmeterFont, pararmeterRed]}>Views</span>
                     <span css={[pararmeterFont, pararmeterBlue]}>Purchases</span>
