@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import styled from "@emotion/styled"
-import { css, keyframes } from "@emotion/react"
-import { useState } from 'react';
+import { keyframes } from "@emotion/react"
 
 const cubicBezier = 'cubic-bezier(0.4, 0, 0.49, 1)';
 
