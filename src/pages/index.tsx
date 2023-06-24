@@ -3,6 +3,7 @@ import Link from "next/link"
 
 const Grid = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
 
 const LinkButton = styled(Link)`
@@ -21,6 +22,7 @@ export default function Home() {
       <LinkButton href="/challenge/day2">Day2</LinkButton>
       <LinkButton href="/challenge/day3">Day3</LinkButton>
       <LinkButton href="/challenge/day4">Day4</LinkButton>
+      <LinkButton href="/challenge/day5">Day5</LinkButton>
     </Grid>
   )
 }
