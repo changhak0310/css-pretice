@@ -99,7 +99,7 @@ const Dot3 = styled.div`
     animation: ${jump3} 2s ${cubicBezier} infinite alternate;
 `
 
-const Day3 = () => {
+const Day4 = () => {
     
     return(
         <Frame>
@@ -112,4 +112,4 @@ const Day3 = () => {
     )
 }
 
-export default Day3
+export default Day4
