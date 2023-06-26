@@ -7,8 +7,6 @@ const red = "#FA7373";
 const blue = "#7BA2FF";
 
 const Frame = styled.div`
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans:600,400');
-
     position: absolute;
     top: 50%;
     left: 50%;
@@ -220,23 +218,23 @@ const Point = styled.div`
 `
 
 const RedPoints = styled.div`
-    &>:nth-child(1){ left: 7px; top: 43px; }
-    &>:nth-child(2){ left: 48px; top: 9px; }
-    &>:nth-child(3){ left: 88px; top: 20px; }
-    &>:nth-child(4){ left: 128px; top: 8px; }
-    &>:nth-child(5){ left: 169px; top: 35px; }
-    &>:nth-child(6){ left: 209px; top: 45px; }
-    &>:nth-child(7){ left: 249px; top: 16px; }
+    &>:nth-of-type(1){ left: 7px; top: 43px; }
+    &>:nth-of-type(2){ left: 48px; top: 9px; }
+    &>:nth-of-type(3){ left: 88px; top: 20px; }
+    &>:nth-of-type(4){ left: 128px; top: 8px; }
+    &>:nth-of-type(5){ left: 169px; top: 35px; }
+    &>:nth-of-type(6){ left: 209px; top: 45px; }
+    &>:nth-of-type(7){ left: 249px; top: 16px; }
 `
 
 const BluePoints = styled.div`
-    &>:nth-child(1){ left: 7px; top: 58px; }
-    &>:nth-child(2){ left: 48px; top: 47px; }
-    &>:nth-child(3){ left: 88px; top: 62px; }
-    &>:nth-child(4){ left: 128px; top: 52px; }
-    &>:nth-child(5){ left: 169px; top: 58px; }
-    &>:nth-child(6){ left: 209px; top: 71px; }
-    &>:nth-child(7){ left: 249px; top: 61px; }
+    &>:nth-of-type(1){ left: 7px; top: 58px; }
+    &>:nth-of-type(2){ left: 48px; top: 47px; }
+    &>:nth-of-type(3){ left: 88px; top: 62px; }
+    &>:nth-of-type(4){ left: 128px; top: 52px; }
+    &>:nth-of-type(5){ left: 169px; top: 58px; }
+    &>:nth-of-type(6){ left: 209px; top: 71px; }
+    &>:nth-of-type(7){ left: 249px; top: 61px; }
 `
 
 const Days = styled.div`
