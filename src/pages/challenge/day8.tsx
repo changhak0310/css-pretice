@@ -2,10 +2,24 @@
 
 import styled from "@emotion/styled"
 import { css, keyframes } from "@emotion/react"
+import { HTMLAttributes } from 'react';
+
+interface DivProps extends HTMLAttributes<HTMLInputElement> {
+    index: number;
+}
 
 const getRandomNumber = (number: number) => {
     return Math.floor(Math.random() * number)
 }
+
+const frame = keyframes`
+                from {
+                    transform: rotate(0deg) translate3d(0, 0, 0);
+                }
+                to {
+                    transform: rotate(360deg) translate3d(0, 0, 0);
+                }
+            `;
 
 const rotate1 = Array.from({ length: 8 }, (_, index) => {
     return keyframes`
@@ -17,6 +31,14 @@ const rotate1 = Array.from({ length: 8 }, (_, index) => {
         }
     `
 })
+
+const rotate3 = keyframes`
+    from {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    to {
+        transform: rotate(360deg) translate3d(0, 0, 0);
+}`
 
 const rotate2 = Array.from({ length: 11 }, (_, index) => {
     return keyframes`
@@ -57,44 +79,9 @@ const Ball = styled.div`
     background-color: #fff;
     border-radius: 50%;
     filter: blur(15px);
-
-    ${rotate1.map((aniamtion, index) => {
-            const time = 2.5 + index / 5 + "s";
-            const delay = (index / 5)+"s";
-            const trans = 40 - index * 3+"px";
-            return css`
-                &>:nth-of-type(${index}) {
-                    ::after{
-                        transform-origin: calc(${trans} + ${trans});
-                        animation: ${aniamtion} ${time} ease-in-out ${delay} infinite;
-                    }
-                }
-            `;
-    })}
-
-    ${rotate2.map((aniamtion, index) => {
-            const num = index+9;
-            const time = 3.5 + index / 5 + "s";
-            const delay = (index / 5)+"s";
-            const width = 7 + index+"px";
-            const tras = 60 - index * 2+"px";
-            return css`
-                &>:nth-of-type(${num}) {
-                    width: ${width};
-                    height: ${width};
-                    transform: rotate(${getRandomNumber(300)}deg);
-                    ::after{
-                        animation: ${aniamtion} ${time} ease-in-out ${delay} infinite;
-                        transform-origin: ${tras} ${tras};
-                        width: ${width};
-                        height: ${width};
-                    }
-                }
-            `;
-    })}
 `
 
-const Blubb = styled.div`
+const Blubb = styled.div<DivProps>`
     position: absolute;
     top: 20px;
     left: 20px;
@@ -110,13 +97,31 @@ const Blubb = styled.div`
         background-color: #fff;
         border-radius: 50%;
         filter: blur(5px);
+        ${(props) => {
+            const trasOrigin = 40-props.index*3+"px";
+            const animationIn = 2.5+props.index/5+"s";
+            const delay = "ease-in-out";
+            const animationOut = props.index/ 5+"s";
+            const direction = "infinite";
+            return(css`
+                transform-origin: ${trasOrigin} ${trasOrigin};
+                animation: ${frame} ${animationIn} ${delay} ${animationOut} ${direction};
+            `)
+        }}
     }
-`
+`;
 
-const Sparkle = styled.div`
+const Sparkle = styled.div<DivProps>`
     position: absolute;
     top: 38px;
     left: 38px;
+    ${(props) => {
+            const width = 7 + props.index+"px";
+            return(css`
+                width: ${width};
+                height: ${width};
+                transform: rotate(${getRandomNumber(300)}deg);
+    `)}}
     
     &::after{
         position: absolute;
@@ -125,26 +130,33 @@ const Sparkle = styled.div`
         background-color: #fff;
         border-radius: 50%;
         filter: blur(3px);
+
+        ${(props) => {
+            const width = 7 + props.index+"px";
+            const animationIn = 3.5 + props.index / 5 + "s";
+            const animationOut = (props.index / 5)+"s";
+            const tras = 60 - props.index * 2+"px";
+            const delay = "ease-in-out";
+            const direction = "infinite";
+            return(css`
+                animation: ${frame} ${animationIn} ${delay} ${animationOut} ${direction};
+                transform-origin: ${tras} ${tras};
+                width: ${width};
+                height: ${width};
+        `)}}
     }
-`
+`;
 
 
 const Day8 = () => {
     return(
         <Frame>
             <Center>
-                <Ball>
-                    {
-                        rotate1.map((index) => {
-                            return(<Blubb/>)
-                          })
-                    }
-                    {
-                        rotate2.map((index) => {
-                            return(<Sparkle/>)
-                        })
-                    }
-                </Ball>
+                <Ball/>
+                {Array.from({ length: 8 }).map((_, index) => {
+                    return <Blubb index={index}/>})}
+                {Array.from({length: 10}).map((_, index) => {
+                    return(<Sparkle index={index}/>)})}
             </Center>
         </Frame>
     )
