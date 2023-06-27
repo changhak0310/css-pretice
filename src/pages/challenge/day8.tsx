@@ -1,10 +1,9 @@
 /** @jsxImportSource @emotion/react */
 
 import styled from "@emotion/styled"
-import { css, keyframes } from "@emotion/react"
-import { HTMLAttributes } from 'react';
+import { css, keyframes  } from "@emotion/react"
 
-interface DivProps extends HTMLAttributes<HTMLInputElement> {
+interface DivProps{
     index: number;
 }
 
@@ -13,43 +12,13 @@ const getRandomNumber = (number: number) => {
 }
 
 const frame = keyframes`
-                from {
-                    transform: rotate(0deg) translate3d(0, 0, 0);
-                }
-                to {
-                    transform: rotate(360deg) translate3d(0, 0, 0);
-                }
-            `;
-
-const rotate1 = Array.from({ length: 8 }, (_, index) => {
-    return keyframes`
-        from {
-            transform: rotate(0deg) translate3d(0, 0, 0);
-        }
-        to {
-            transform: rotate(360deg) translate3d(0, 0, 0);
-        }
-    `
-})
-
-const rotate3 = keyframes`
     from {
         transform: rotate(0deg) translate3d(0, 0, 0);
     }
     to {
         transform: rotate(360deg) translate3d(0, 0, 0);
-}`
-
-const rotate2 = Array.from({ length: 11 }, (_, index) => {
-    return keyframes`
-        from {
-            transform: rotate(0deg) translate3d(0, 0, 0);
-        }
-        to {
-            transform: rotate(360deg) translate3d(0, 0, 0);
-        }
-    `
-})
+    }
+`;
 
 const Frame = styled.div`    
     position: absolute;
@@ -87,7 +56,7 @@ const Blubb = styled.div<DivProps>`
     left: 20px;
     width: 50px;
     height: 50px;
-    transform: rotate(${getRandomNumber(300)}deg);
+    transform: rotate(${({ index }) => getRandomNumber(300)}deg);
     &::after{
         position: absolute;
         display: block;
@@ -115,12 +84,12 @@ const Sparkle = styled.div<DivProps>`
     position: absolute;
     top: 38px;
     left: 38px;
+    transform: rotate(${({ index }) => getRandomNumber(300)}deg);
     ${(props) => {
             const width = 7 + props.index+"px";
             return(css`
                 width: ${width};
                 height: ${width};
-                transform: rotate(${getRandomNumber(300)}deg);
     `)}}
     
     &::after{
@@ -154,9 +123,9 @@ const Day8 = () => {
             <Center>
                 <Ball/>
                 {Array.from({ length: 8 }).map((_, index) => {
-                    return <Blubb index={index}/>})}
+                    return <Blubb key={index} index={index}/>})}
                 {Array.from({length: 10}).map((_, index) => {
-                    return(<Sparkle index={index}/>)})}
+                    return(<Sparkle key={index} index={index}/>)})}
             </Center>
         </Frame>
     )
