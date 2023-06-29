@@ -157,17 +157,14 @@ const DropRain = styled.div<DivProps>`
     left: ${props => -20+38*props.index}px;
     bottom: 90px;
     border-radius: 50%;
-    transform-origin: 50% 50%;
     animation: ${drop} ${(props) => (props.duringTime + getRandomNumber(2) / 10)}s linear ${(props) => (getRandomNumber(50) / 25)}s infinite;
+	animation-fill-mode: both;
+    transform-origin: 50% 50%;
 
     &:before{
         position: absolute;
         content: '';
         display: block;
-        top: -2px;
-        left: 1px;
-        width: 6px;
-        height: 6px;
         background-color: ${rainyColor};
         border-radius: 3px;
     }
@@ -176,10 +173,6 @@ const DropRain = styled.div<DivProps>`
         position: absolute;
         content: '';
         display: block;
-        top: -5px;
-        left: 2px;
-        width: 4px;
-        height: 10px;
         background-color: ${rainyColor};
         border-radius: 50%;
     }
@@ -188,7 +181,6 @@ const DropRain = styled.div<DivProps>`
 const bigRain = css`
     width: 8px;
     height: 8px;
-    animation-fill-mode: both;
 
     &:before {
         top: -2px;
@@ -209,7 +201,6 @@ const mediumRain = css`
     opacity: 0.6;
     width: 6px;
     height: 6px;
-    animation-fill-mode: both;
 
     &:before {
 		top: -2px;
@@ -230,7 +221,6 @@ const smallRain = css`
     opacity: 0.3;
     width: 4px;
     height: 4px;
-	animation-fill-mode: both;
 
     &:before {
 		top: -2px;
