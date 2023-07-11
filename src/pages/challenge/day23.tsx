@@ -114,6 +114,7 @@ const Circle = styled.div`
     top: 175px;
     left: 175px;
     background-color: #fff;
+    border-radius: 50%;
     animation: ${circle} 1s ease-in-out;
     animation-fill-mode: forwards;
 `
@@ -155,7 +156,7 @@ const Bracket = styled.div`
         background-color: #fff
     }
 `
-const BracketLeft = styled.div`
+const bracketLeft = css`
     left: 50px;
 
     &::before {
@@ -174,7 +175,7 @@ const BracketLeft = styled.div`
         animation-fill-mode: both;
     }
 `
-const BracketRight = styled.div`
+const bracketRight = css`
     right: 50px;
     &::before {
         top: 0;
@@ -252,11 +253,11 @@ const Day23 = () => {
             <Circle/>
             <Line css={lineLeft}/>
             <Line css={lineRight}/>
-            <Bracket css={BracketLeft}/>
-            <Bracket css={BracketRight}/>
+            <Bracket css={bracketLeft}/>
+            <Bracket css={bracketRight}/>
             <Small css={smallTop}>collect</Small>
             <Big>moments</Big>
-            <Small css={smallTop}>not things</Small>
+            <Small css={smallBottom}>not things</Small>
             <Hide css={hideTop}/>
             <Hide css={hideBottom}/>
         </Frame>
