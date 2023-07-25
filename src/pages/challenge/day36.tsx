@@ -3,6 +3,7 @@
 import styled from "@emotion/styled"
 import { css, keyframes } from "@emotion/react"
 import { useState } from 'react';
+import { EyeOutlined, CommentOutlined, BellOutlined, SettingOutlined, SearchOutlined } from '@ant-design/icons'
 
 const Frame = styled.div`
     position: absolute;
@@ -123,99 +124,57 @@ const Tabs = styled.div`
 `
 
 const Day36 = () => {
+    const box = [
+        {
+            title: "Dashboard",
+            content: <><P><Line css={{width: '250px'}}/><Line css={{width: '270px'}}/><Line css={{width: '235px'}}/><Line css={{width: '260px'}}/><Line css={{width: '53px'}}/></P><P><Line css={{width: '262px'}}/><Line css={{width: '234px'}}/><Line css={{width: '246px'}}/><Line css={{width: '260px'}}/><Line css={{width: '144px'}}/></P></>
+        },
+        {
+            title: "Comments",
+            content: <><P><Line css={{width: '250px'}}/><Line css={{width: '270px'}}/><Line css={{width: '235px'}}/><Line css={{width: '260px'}}/><Line css={{width: '53px'}}/></P><P><Line css={{width: '262px'}}/><Line css={{width: '234px'}}/><Line css={{width: '246px'}}/><Line css={{width: '260px'}}/><Line css={{width: '144px'}}/></P></>
+        },
+        {
+            title: "Notifications",
+            content: <><P><Line css={{width: '250px'}}/><Line css={{width: '270px'}}/><Line css={{width: '235px'}}/><Line css={{width: '260px'}}/><Line css={{width: '53px'}}/></P><P><Line css={{width: '262px'}}/><Line css={{width: '234px'}}/><Line css={{width: '246px'}}/><Line css={{width: '260px'}}/><Line css={{width: '144px'}}/></P></>
+        },
+        {
+            title: "Settings",
+            content: <><P><Line css={{width: '250px'}}/><Line css={{width: '270px'}}/><Line css={{width: '235px'}}/><Line css={{width: '260px'}}/><Line css={{width: '53px'}}/></P><P><Line css={{width: '262px'}}/><Line css={{width: '234px'}}/><Line css={{width: '246px'}}/><Line css={{width: '260px'}}/><Line css={{width: '144px'}}/></P></>
+        }
+    ]
+    const [state, setState] = useState(0);
+    const handleChange = (number: number) => {
+        setState(number)
+    }
     return(
         <Frame>
             <Center>
                 <Tabs>
                     <Top/>
-                    <Input type="radio" id="tab-1" name="rd" checked={true}/>
+                    <Input type="radio" id="tab-1" name="rd" defaultChecked={true} onChange={() => handleChange(0)}/>
                     <Tab htmlFor="tab-1">
-                        <>Eye</>
+                        <EyeOutlined />
                     </Tab>
-                    <Input type="radio" id="tab-2" name="rd"/>
+                    <Input type="radio" id="tab-2" name="rd" onChange={() => handleChange(1)}/>
                     <Tab htmlFor="tab-2">
-                        <>Chat</>
+                        <CommentOutlined />
                     </Tab>
-                    <Input type="radio" id="tab-3" name="rd"/>
+                    <Input type="radio" id="tab-3" name="rd" onChange={() => handleChange(2)}/>
                     <Tab htmlFor="tab-3">
-                        <>Bell</>
+                        <BellOutlined />
                     </Tab>
-                    <Input type="radio" id="tab-4" name="rd"/>
+                    <Input type="radio" id="tab-4" name="rd" onChange={() => handleChange(3)}/>
                     <Tab htmlFor="tab-4">
-                        <>Setting</>
+                        <SettingOutlined />
                     </Tab>
                     <Tab css={search}>
-                        <>Search</>
+                        <SearchOutlined />
                     </Tab>
                 </Tabs>
                 <Content id="content">
-                    <Box id="box-1">
-                        <H1>Dashboard</H1>
-                        <P>
-                            <Line css={{width: "250px"}}/>
-                            <Line css={{width: "270px"}}/>
-                            <Line css={{width: "235px"}}/>
-                            <Line css={{width: "260px"}}/>
-                            <Line css={{width: "53px"}}/>
-                        </P>
-                        <P>
-                            <Line css={{width: "262px"}}/>
-                            <Line css={{width: "234px"}}/>
-                            <Line css={{width: "246px"}}/>
-                            <Line css={{width: "260px"}}/>
-                            <Line css={{width: "144px"}}/>
-                        </P>
-                    </Box>
-                    <Box id="box-2">
-                        <H1>Notifications</H1>
-                        <P>
-                            <Line css={{width: "250px"}}/>
-                            <Line css={{width: "270px"}}/>
-                            <Line css={{width: "235px"}}/>
-                            <Line css={{width: "260px"}}/>
-                            <Line css={{width: "53px"}}/>
-                        </P>
-                        <P>
-                            <Line css={{width: "262px"}}/>
-                            <Line css={{width: "234px"}}/>
-                            <Line css={{width: "246px"}}/>
-                            <Line css={{width: "260px"}}/>
-                            <Line css={{width: "144px"}}/>
-                        </P>
-                    </Box>
-                    <Box id="box-3">
-                        <H1>Notifications</H1>
-                        <P>
-                            <Line css={{width: "250px"}}/>
-                            <Line css={{width: "270px"}}/>
-                            <Line css={{width: "235px"}}/>
-                            <Line css={{width: "260px"}}/>
-                            <Line css={{width: "53px"}}/>
-                        </P>
-                        <P>
-                            <Line css={{width: "262px"}}/>
-                            <Line css={{width: "234px"}}/>
-                            <Line css={{width: "246px"}}/>
-                            <Line css={{width: "260px"}}/>
-                            <Line css={{width: "144px"}}/>
-                        </P>
-                    </Box>
-                    <Box id="box-4">
-                        <H1>Settings</H1>
-                        <P>
-                            <Line css={{width: "250px"}}/>
-                            <Line css={{width: "270px"}}/>
-                            <Line css={{width: "235px"}}/>
-                            <Line css={{width: "260px"}}/>
-                            <Line css={{width: "53px"}}/>
-                        </P>
-                        <P>
-                            <Line css={{width: "262px"}}/>
-                            <Line css={{width: "234px"}}/>
-                            <Line css={{width: "246px"}}/>
-                            <Line css={{width: "260px"}}/>
-                            <Line css={{width: "144px"}}/>
-                        </P>
+                    <Box>
+                        <H1>{box[state].title}</H1>
+                        {box[state].content}
                     </Box>
                 </Content>
             </Center>
