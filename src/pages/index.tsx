@@ -57,6 +57,7 @@ export default function Home() {
       <LinkButton href="/challenge/day37">Day37</LinkButton>
       <LinkButton href="/challenge/day38">Day38</LinkButton>
       <LinkButton href="/challenge/day39">Day39</LinkButton>
+      <LinkButton href="/challenge/day40">Day40</LinkButton>
     </Grid>
   )
 }
