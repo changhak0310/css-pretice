@@ -1,20 +1,3 @@
-/** @jsxImportSource @emotion/react */
-
-import styled from "@emotion/styled"
-import { css, keyframes } from "@emotion/react"
-import { useState } from 'react';
-
-const Glow = styled.div`
-    position: absolute;
-    width: 76px;
-    height: 76px;
-    background-color: #FFF35C;
-    box-shadow: 50px;
-    top: 134px;
-    left: 162px;
-    transition: all .5s ease-in-out;
-`
-
 const Day43 = () => {
 
     return(
