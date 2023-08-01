@@ -4,33 +4,6 @@ import styled from "@emotion/styled"
 import { css, keyframes } from "@emotion/react"
 import { useState } from 'react';
 
-
-const Frame = styled.div`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 400px;
-    margin-top: -200px;
-    margin-left: -200px;
-    border-radius: 2px;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    background: #404556;
-`
-const Bulb = styled.div`
-    position: absolute;
-    z-index: 2;
-    top: 134px;
-    left: 162px;
-    fill: #FFF35C;
-    transition: all .5s ease-in-out;
-    cursor: pointer;
-
-    &:hover{
-        fill: #8C8F99;
-    }
-`
 const Glow = styled.div`
     position: absolute;
     width: 76px;
