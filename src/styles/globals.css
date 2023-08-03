@@ -9,6 +9,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:700,300');
 @import url('https://100dayscss.com/codepen/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 
 @tailwind base;
 @tailwind components;
@@ -19,9 +20,9 @@
 @tailwind utilities;
 
 @layer utilities {
-   .animate-paused {
-     animation-play-state: paused;
-   }
+  .paused {
+    animation-play-state: paused;
+  }
 }
 
 *{
