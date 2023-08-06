@@ -58,7 +58,7 @@ const Day47 = () => {
                 <Pixel key={index}>
                     {
                         (index+1 == 130 || index+1 == 131 || index+1 == 149 || index+1 == 150 || index+1 == 151 || index+1 == 152 || index+1 == 168 || index+1 == 169 || index+1 == 170 || index+1 == 171 || index+1 == 172 || index+1 == 173 || index+1 == 187 || index+1 == 188 || index+1 == 190 || index+1 == 191 || index+1 == 193 || index+1 == 194 || index+1 == 207 || index+1 == 208 || index+1 == 209 || index+1 == 210 || index+1 == 211 || index+1 == 212 || index+1 == 213 || index+1 == 214 || index+1 == 229 || index+1 == 232 || index+1 == 248 || index+1 == 250 || index+1 == 251 || index+1 == 253 || index+1 == 267 || index+1 == 269 || index+1 == 272 || index+1 == 274) ?
-                        <Input type="checkbox" id={index.toString()} checked/>  :
+                        <Input type="checkbox" id={index.toString()} checked={true}/>  :
                         <Input type="checkbox" id={index.toString()}/>
                     }                    
                     <Label htmlFor={index.toString()}/>
